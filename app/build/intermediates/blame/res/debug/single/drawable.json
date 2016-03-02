@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\card_light_press.xml",
+        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\drawable\\card_light_press.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\lin_yuan.xml",
+        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\drawable\\lin_yuan.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\card_light.xml",
+        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\drawable\\card_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\lv_selector.xml",
+        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\drawable\\lv_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\item_background_selector_light.xml",
+        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\drawable\\item_background_selector_light.xml"
+    }
+]

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ss">#FFF0F0F0</color>
+    <color name="white">#FFFFFFff</color>
+    <color name="blank">#000000</color>
+    <color name="gray">#BEBEBE</color>
+    <color name="blue">#2075FF</color>
+    <color name="touming">#00000000</color>
+</resources>

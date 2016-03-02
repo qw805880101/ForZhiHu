@@ -1,0 +1,50 @@
+<com.example.forzhihu.view.DragLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000" >
+
+    <!-- 下层 左边的布局 -->
+
+    <include layout="@layout/view_left" />
+    <!-- 上层 右边的主布局 -->
+
+    <com.example.forzhihu.view.CustomRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <include layout="@layout/view_title" />
+            <!-- 中间内容后面放入Fragment -->
+
+            <com.example.forzhihu.view.CustomSwipeToRefresh
+                android:id="@+id/pull"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <com.example.forzhihu.view.MyScrollView
+                    android:id="@+id/my_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <include layout="@layout/view_content" />
+                    </LinearLayout>
+                </com.example.forzhihu.view.MyScrollView>
+            </com.example.forzhihu.view.CustomSwipeToRefresh>
+        </LinearLayout>
+    </com.example.forzhihu.view.CustomRelativeLayout>
+
+</com.example.forzhihu.view.DragLayout>
