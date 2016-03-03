@@ -1,14 +1,14 @@
 package com.example.forzhihu.async;
 
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.widget.Toast;
+
 import com.example.forzhihu.activity.MainActivity;
 import com.example.forzhihu.http.HttpUtils;
 import com.example.forzhihu.info.ThemesInfo;
 import com.example.forzhihu.utils.Info;
 import com.example.forzhihu.utils.Utils;
-
-import android.content.Intent;
-import android.os.AsyncTask;
-import android.widget.Toast;
 
 public class Async_Themes extends AsyncTask<Integer, Integer, ThemesInfo> {
 	private String url;
@@ -34,7 +34,7 @@ public class Async_Themes extends AsyncTask<Integer, Integer, ThemesInfo> {
 		} else {
 			if (!Info.Erro.equals("")) {
 				Toast.makeText(Info.currentActivity, Info.Erro, Toast.LENGTH_SHORT).show();
-				Utils.Log("´íÎó~~~~~~~~~~~~~~~~~" + Info.Erro);
+				Utils.Log("é”™è¯¯~~~~~~~~~~~~~~~~~" + Info.Erro);
 			}
 		}
 	}

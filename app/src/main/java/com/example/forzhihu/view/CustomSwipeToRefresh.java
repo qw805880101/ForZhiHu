@@ -9,7 +9,7 @@ import android.view.ViewConfiguration;
 
 public class CustomSwipeToRefresh extends SwipeRefreshLayout {
 	/**
-	 * 滑动到最下面时的上拉操作
+	 * 婊戝姩鍒版渶涓嬮潰鏃剁殑涓婃媺鎿嶄綔
 	 */
 
 	private int mTouchSlop;
@@ -33,17 +33,17 @@ public class CustomSwipeToRefresh extends SwipeRefreshLayout {
 	public boolean onInterceptTouchEvent(MotionEvent event) {
 
 		switch (event.getAction()) {
-		case MotionEvent.ACTION_DOWN:
-			mPrevX = MotionEvent.obtain(event).getX();
-			break;
+			case MotionEvent.ACTION_DOWN:
+				mPrevX = MotionEvent.obtain(event).getX();
+				break;
 
-		case MotionEvent.ACTION_MOVE:
-			final float eventX = event.getX();
-			float xDiff = Math.abs(eventX - mPrevX);
+			case MotionEvent.ACTION_MOVE:
+				final float eventX = event.getX();
+				float xDiff = Math.abs(eventX - mPrevX);
 
-			if (xDiff > mTouchSlop) {
-				return false;
-			}
+				if (xDiff > mTouchSlop) {
+					return false;
+				}
 		}
 
 		return super.onInterceptTouchEvent(event);

@@ -1,42 +1,42 @@
 [
     {
-        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\items_newstitle.xml",
-        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\layout\\items_newstitle.xml"
+        "merged": "E:\\android_works\\for\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_left.xml",
+        "source": "E:\\android_works\\for\\ForZhiHu\\app\\src\\main\\res\\layout\\view_left.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\items_news.xml",
-        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\layout\\items_news.xml"
+        "merged": "E:\\android_works\\for\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\items_news.xml",
+        "source": "E:\\android_works\\for\\ForZhiHu\\app\\src\\main\\res\\layout\\items_news.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_title.xml",
-        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\layout\\view_title.xml"
+        "merged": "E:\\android_works\\for\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\kanner_layout.xml",
+        "source": "E:\\android_works\\for\\ForZhiHu\\app\\src\\main\\res\\layout\\kanner_layout.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "E:\\android_works\\for\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_content.xml",
+        "source": "E:\\android_works\\for\\ForZhiHu\\app\\src\\main\\res\\layout\\view_content.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\kanner_items.xml",
-        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\layout\\kanner_items.xml"
+        "merged": "E:\\android_works\\for\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\items_newstitle.xml",
+        "source": "E:\\android_works\\for\\ForZhiHu\\app\\src\\main\\res\\layout\\items_newstitle.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_init.xml",
-        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\layout\\activity_init.xml"
+        "merged": "E:\\android_works\\for\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_title.xml",
+        "source": "E:\\android_works\\for\\ForZhiHu\\app\\src\\main\\res\\layout\\view_title.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\items_menu.xml",
-        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\layout\\items_menu.xml"
+        "merged": "E:\\android_works\\for\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\kanner_items.xml",
+        "source": "E:\\android_works\\for\\ForZhiHu\\app\\src\\main\\res\\layout\\kanner_items.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\kanner_layout.xml",
-        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\layout\\kanner_layout.xml"
+        "merged": "E:\\android_works\\for\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\items_menu.xml",
+        "source": "E:\\android_works\\for\\ForZhiHu\\app\\src\\main\\res\\layout\\items_menu.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_left.xml",
-        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\layout\\view_left.xml"
+        "merged": "E:\\android_works\\for\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\android_works\\for\\ForZhiHu\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_content.xml",
-        "source": "D:\\AndroidStudioProjects\\ForZhiHu\\app\\src\\main\\res\\layout\\view_content.xml"
+        "merged": "E:\\android_works\\for\\ForZhiHu\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_init.xml",
+        "source": "E:\\android_works\\for\\ForZhiHu\\app\\src\\main\\res\\layout\\activity_init.xml"
     }
 ]

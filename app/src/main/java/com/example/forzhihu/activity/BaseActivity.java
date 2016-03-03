@@ -1,13 +1,13 @@
 package com.example.forzhihu.activity;
 
-import com.example.forzhihu.R;
-import com.example.forzhihu.utils.Utils;
-
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.forzhihu.R;
+import com.example.forzhihu.utils.Utils;
 
 public abstract class BaseActivity extends FragmentActivity{
 	private Button bt_menu, bt_set;

@@ -11,8 +11,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * ÁªÍøÏà¹Ø
- * 
+ * è”ç½‘ç›¸å…³
+ *
  * @author tc
  *
  */
@@ -23,7 +23,7 @@ public class HttpUtils {
 	private static String res;
 
 	public static <T> T getJsonStr(String url, Class<T> cla) {
-		Utils.Log("¿ªÊ¼ÁªÍø");
+		Utils.Log("å¼€å§‹è”ç½‘");
 		res = startHttp(url);
 		if (res == null) {
 			return null;
@@ -31,14 +31,14 @@ public class HttpUtils {
 			try {
 				return JsonUtils.fromJson(res, cla);
 			} catch (Exception e) {
-				Info.Erro = "Êı¾İ½âÎö´íÎó";
+				Info.Erro = "æ•°æ®è§£æé”™è¯¯";
 				return null;
 			}
 		}
 	}
 
 	public static <T> T getJsonStr(String url, TypeToken<T> token) {
-		Utils.Log("¿ªÊ¼ÁªÍø");
+		Utils.Log("å¼€å§‹è”ç½‘");
 		res = startHttp(url);
 		if (res == null) {
 			return null;
@@ -46,7 +46,7 @@ public class HttpUtils {
 			try {
 				return JsonUtils.fromJson(res, token);
 			} catch (Exception e) {
-				Info.Erro = "Êı¾İ½âÎö´íÎó";
+				Info.Erro = "æ•°æ®è§£æé”™è¯¯";
 				return null;
 			}
 		}
@@ -67,7 +67,7 @@ public class HttpUtils {
 				index++;
 				System.out.println("index = " + index);
 				if (index > 61) {
-					Info.Erro = "ÍøÂçÁ¬½Ó³¬Ê±";
+					Info.Erro = "ç½‘ç»œè¿æ¥è¶…æ—¶";
 					return null;
 				} else {
 					res = response.body().string();
@@ -80,7 +80,7 @@ public class HttpUtils {
 			}
 			return res;
 		} catch (Exception e) {
-			Info.Erro = "ÍøÂçÁ¬½Ó´íÎó";
+			Info.Erro = "ç½‘ç»œè¿æ¥é”™è¯¯";
 			return null;
 		} finally {
 			if (mHttpClient != null) {

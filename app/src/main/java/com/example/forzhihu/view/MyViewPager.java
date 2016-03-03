@@ -9,12 +9,12 @@ import android.view.MotionEvent;
 
 public class MyViewPager extends ViewPager {
 
-	/** ´¥ÃþÊ±°´ÏÂµÄµã **/
+	/** è§¦æ‘¸æ—¶æŒ‰ä¸‹çš„ç‚¹ **/
 	PointF downP = new PointF();
-	/** ´¥ÃþÊ±µ±Ç°µÄµã **/
+	/** è§¦æ‘¸æ—¶å½“å‰çš„ç‚¹ **/
 	PointF curP = new PointF();
 
-	/** ×Ô¶¨ÒåÊÖÊÆ **/
+	/** è‡ªå®šä¹‰æ‰‹åŠ¿ **/
 	private GestureDetector mGestureDetector;
 
 	public MyViewPager(Context context, AttributeSet attrs) {
@@ -31,37 +31,37 @@ public class MyViewPager extends ViewPager {
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
 		return super.onInterceptTouchEvent(ev);// default
-		// µ±À¹½Ø´¥ÃþÊÂ¼þµ½´ï´ËÎ»ÖÃµÄÊ±ºò£¬·µ»Øtrue£¬
-		// ËµÃ÷½«onTouchÀ¹½ØÔÚ´Ë¿Ø¼þ£¬½ø¶øÖ´ÐÐ´Ë¿Ø¼þµÄonTouchEvent
+		// å½“æ‹¦æˆªè§¦æ‘¸äº‹ä»¶åˆ°è¾¾æ­¤ä½ç½®çš„æ—¶å€™ï¼Œè¿”å›žtrueï¼Œ
+		// è¯´æ˜Žå°†onTouchæ‹¦æˆªåœ¨æ­¤æŽ§ä»¶ï¼Œè¿›è€Œæ‰§è¡Œæ­¤æŽ§ä»¶çš„onTouchEvent
 		// return true;
-		// ½Ó½üË®Æ½»¬¶¯Ê±×Ó¿Ø¼þ´¦Àí¸ÃÊÂ¼þ£¬·ñÔò½»¸ø¸¸¿Ø¼þ´¦Àí
+		// æŽ¥è¿‘æ°´å¹³æ»‘åŠ¨æ—¶å­æŽ§ä»¶å¤„ç†è¯¥äº‹ä»¶ï¼Œå¦åˆ™äº¤ç»™çˆ¶æŽ§ä»¶å¤„ç†
 		// return mGestureDetector.onTouchEvent(ev);
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent ev) {
-		// Ã¿´Î½øÐÐonTouchÊÂ¼þ¶¼¼ÇÂ¼µ±Ç°µÄ°´ÏÂµÄ×ø±ê
+		// æ¯æ¬¡è¿›è¡ŒonTouchäº‹ä»¶éƒ½è®°å½•å½“å‰çš„æŒ‰ä¸‹çš„åæ ‡
 		curP.x = ev.getX();
 		curP.y = ev.getY();
 
 		if (ev.getAction() == MotionEvent.ACTION_DOWN) {
-			// ¼ÇÂ¼°´ÏÂÊ±ºòµÄ×ø±ê
-			// ÇÐ¼Ç²»¿ÉÓÃ downP = curP £¬ÕâÑùÔÚ¸Ä±äcurPµÄÊ±ºò£¬downPÒ²»á¸Ä±ä
+			// è®°å½•æŒ‰ä¸‹æ—¶å€™çš„åæ ‡
+			// åˆ‡è®°ä¸å¯ç”¨ downP = curP ï¼Œè¿™æ ·åœ¨æ”¹å˜curPçš„æ—¶å€™ï¼ŒdownPä¹Ÿä¼šæ”¹å˜
 			downP.x = ev.getX();
 			downP.y = ev.getY();
-			// ´Ë¾ä´úÂëÊÇÎªÁËÍ¨ÖªËûµÄ¸¸ViewPagerÏÖÔÚ½øÐÐµÄÊÇ±¾¿Ø¼þµÄ²Ù×÷£¬²»Òª¶ÔÎÒµÄ²Ù×÷½øÐÐ¸ÉÈÅ
+			// æ­¤å¥ä»£ç æ˜¯ä¸ºäº†é€šçŸ¥ä»–çš„çˆ¶ViewPagerçŽ°åœ¨è¿›è¡Œçš„æ˜¯æœ¬æŽ§ä»¶çš„æ“ä½œï¼Œä¸è¦å¯¹æˆ‘çš„æ“ä½œè¿›è¡Œå¹²æ‰°
 			getParent().requestDisallowInterceptTouchEvent(true);
 		}
 
 		if (ev.getAction() == MotionEvent.ACTION_MOVE) {
 			float distanceX = curP.x - downP.x;
 			float distanceY = curP.y - downP.y;
-			// ½Ó½üË®Æ½»¬¶¯£¬ViewPager¿Ø¼þ²¶»ñÊÖÊÆ£¬Ë®Æ½¹ö¶¯
+			// æŽ¥è¿‘æ°´å¹³æ»‘åŠ¨ï¼ŒViewPageræŽ§ä»¶æ•èŽ·æ‰‹åŠ¿ï¼Œæ°´å¹³æ»šåŠ¨
 			if (Math.abs(distanceX) > Math.abs(distanceY)) {
-				// ´Ë¾ä´úÂëÊÇÎªÁËÍ¨ÖªËûµÄ¸¸ViewPagerÏÖÔÚ½øÐÐµÄÊÇ±¾¿Ø¼þµÄ²Ù×÷£¬²»Òª¶ÔÎÒµÄ²Ù×÷½øÐÐ¸ÉÈÅ
+				// æ­¤å¥ä»£ç æ˜¯ä¸ºäº†é€šçŸ¥ä»–çš„çˆ¶ViewPagerçŽ°åœ¨è¿›è¡Œçš„æ˜¯æœ¬æŽ§ä»¶çš„æ“ä½œï¼Œä¸è¦å¯¹æˆ‘çš„æ“ä½œè¿›è¡Œå¹²æ‰°
 				getParent().requestDisallowInterceptTouchEvent(true);
 			} else {
-				// ½Ó½ü´¹Ö±»¬¶¯£¬½»¸ø¸¸¿Ø¼þ´¦Àí
+				// æŽ¥è¿‘åž‚ç›´æ»‘åŠ¨ï¼Œäº¤ç»™çˆ¶æŽ§ä»¶å¤„ç†
 				getParent().requestDisallowInterceptTouchEvent(false);
 			}
 		}
@@ -74,7 +74,7 @@ public class MyViewPager extends ViewPager {
 		public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
 			// return super.onScroll(e1, e2, distanceX, distanceY);
 
-			// ½Ó½üË®Æ½»¬¶¯Ê±×Ó¿Ø¼þ´¦Àí¸ÃÊÂ¼þ£¬·ñÔò½»¸ø¸¸¿Ø¼þ´¦Àí
+			// æŽ¥è¿‘æ°´å¹³æ»‘åŠ¨æ—¶å­æŽ§ä»¶å¤„ç†è¯¥äº‹ä»¶ï¼Œå¦åˆ™äº¤ç»™çˆ¶æŽ§ä»¶å¤„ç†
 			return (Math.abs(distanceX) > Math.abs(distanceY));
 		}
 	}

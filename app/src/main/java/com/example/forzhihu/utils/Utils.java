@@ -1,12 +1,5 @@
 package com.example.forzhihu.utils;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -18,6 +11,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Utils {
 	private final static String TAG = "tcc";
 
@@ -26,9 +26,9 @@ public class Utils {
 	}
 
 	/**
-	 * ¶ÔÍøÂçÁ¬½Ó×´Ì¬½øĞĞÅĞ¶Ï
-	 * 
-	 * @return true, ¿ÉÓÃ£» false£¬ ²»¿ÉÓÃ
+	 * å¯¹ç½‘ç»œè¿æ¥çŠ¶æ€è¿›è¡Œåˆ¤æ–­
+	 *
+	 * @return true, å¯ç”¨ï¼› falseï¼Œ ä¸å¯ç”¨
 	 */
 	public static boolean isOpenNetwork() {
 		ConnectivityManager connManager = (ConnectivityManager) Info.currentActivity
@@ -47,9 +47,9 @@ public class Utils {
 			fos.write(byteArray);
 			fos.flush();
 			fos.close();
-			Utils.Log("Í¼Æ¬´æ´¢³É¹¦");
+			Utils.Log("å›¾ç‰‡å­˜å‚¨æˆåŠŸ");
 		} catch (IOException e) {
-			Utils.Log("Í¼Æ¬´æ´¢´íÎó~~~~~~~~~~~~~~~~~" + e);
+			Utils.Log("å›¾ç‰‡å­˜å‚¨é”™è¯¯~~~~~~~~~~~~~~~~~" + e);
 		} finally {
 			if (fos != null) {
 				fos = null;
@@ -75,7 +75,7 @@ public class Utils {
 	@SuppressLint("SimpleDateFormat")
 	public static String getTodayNews() {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
-		Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+		Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 		String str = formatter.format(curDate);
 		return str;
 	}
@@ -86,7 +86,7 @@ public class Utils {
 		String str2 = null;
 		try {
 			date = format.parse(str);
-			format.applyPattern("yyyyÄêMMÔÂddÈÕ");
+			format.applyPattern("yyyyå¹´MMæœˆddæ—¥");
 			str2 = format.format(date);
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -95,12 +95,12 @@ public class Utils {
 	}
 
 	/**
-	 * »ñÈ¡Ö¸¶¨ÈÕºó Ç°dayAddNum ÌìµÄ ÈÕÆÚ
-	 * 
+	 * è·å–æŒ‡å®šæ—¥å å‰dayAddNum å¤©çš„ æ—¥æœŸ
+	 *
 	 * @param day
-	 *            ÈÕÆÚ£¬¸ñÊ½ÎªString£º"2013-9-3";
+	 *            æ—¥æœŸï¼Œæ ¼å¼ä¸ºStringï¼š"2013-9-3";
 	 * @param dayAddNum
-	 *            Ôö¼ÓÌìÊı ¸ñÊ½Îªint;
+	 *            å¢åŠ å¤©æ•° æ ¼å¼ä¸ºint;
 	 * @return
 	 */
 	public static String getDateStr(String day, int dayAddNum) {

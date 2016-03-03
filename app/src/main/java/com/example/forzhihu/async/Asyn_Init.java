@@ -1,7 +1,9 @@
 package com.example.forzhihu.async;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.forzhihu.http.HttpUtils;
 import com.example.forzhihu.info.InitBitmapInfo;
@@ -10,10 +12,8 @@ import com.example.forzhihu.utils.Utils;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
-import android.view.View;
-import android.widget.Toast;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 
 public class Asyn_Init extends AsyncTask<Integer, Integer, InitBitmapInfo> {
 	private String url = "";
@@ -22,7 +22,7 @@ public class Asyn_Init extends AsyncTask<Integer, Integer, InitBitmapInfo> {
 	}
 
 	protected InitBitmapInfo doInBackground(Integer... params) {
-		
+
 		return HttpUtils.getJsonStr(url, InitBitmapInfo.class);
 	}
 
@@ -46,7 +46,7 @@ public class Asyn_Init extends AsyncTask<Integer, Integer, InitBitmapInfo> {
 		} else {
 			if (!Info.Erro.equals("")) {
 				Toast.makeText(Info.currentActivity, Info.Erro, Toast.LENGTH_SHORT).show();
-				Utils.Log("´íÎó~~~~~~~~~~~~~~~~~" + Info.Erro);
+				Utils.Log("é”™è¯¯~~~~~~~~~~~~~~~~~" + Info.Erro);
 			}
 		}
 	}

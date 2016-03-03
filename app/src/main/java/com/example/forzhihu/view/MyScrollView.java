@@ -52,7 +52,7 @@ public class MyScrollView extends ScrollView {
 		@Override
 		public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
 			/**
-			 * Èç¹ûÎÒÃÇ¹ö¶¯¸ü½Ó½üË®Æ½·½Ïò,·µ»Øfalse,ÈÃ×ÓÊÓÍ¼À´´¦ÀíËü
+			 * å¦‚æžœæˆ‘ä»¬æ»šåŠ¨æ›´æŽ¥è¿‘æ°´å¹³æ–¹å‘,è¿”å›žfalse,è®©å­è§†å›¾æ¥å¤„ç†å®ƒ
 			 */
 			return (Math.abs(distanceY) > Math.abs(distanceX));
 		}

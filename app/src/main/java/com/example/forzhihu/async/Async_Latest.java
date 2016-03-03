@@ -1,25 +1,20 @@
 package com.example.forzhihu.async;
 
-import com.example.forzhihu.http.HttpUtils;
-import com.example.forzhihu.info.NewsLatest;
-import com.example.forzhihu.utils.Info;
-import com.example.forzhihu.utils.Utils;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.Toast;
 
+import com.example.forzhihu.http.HttpUtils;
+import com.example.forzhihu.info.NewsLatest;
+import com.example.forzhihu.utils.Info;
+import com.example.forzhihu.utils.Utils;
+
 public class Async_Latest extends AsyncTask<Integer, Integer, NewsLatest> {
 	private String url;
 	private Intent intent;
 	private Handler mHandler;
-
-	public Async_Latest(String url, Intent intent) {
-		this.url = url;
-		this.intent = intent;
-	}
 
 	public Async_Latest(String url, Handler mHandler) {
 		this.url = url;
@@ -40,14 +35,14 @@ public class Async_Latest extends AsyncTask<Integer, Integer, NewsLatest> {
 				Info.currentActivity.finish();
 			} else if (mHandler != null) {
 				Message message = new Message();
-				
+
 				message.obj = newsLatest;
 				mHandler.sendMessage(message);
 			}
 		} else {
 			if (!Info.Erro.equals("")) {
 				Toast.makeText(Info.currentActivity, Info.Erro, Toast.LENGTH_SHORT).show();
-				Utils.Log("´íÎó~~~~~~~~~~~~~~~~~" + Info.Erro);
+				Utils.Log("é”™è¯¯~~~~~~~~~~~~~~~~~" + Info.Erro);
 				if (mHandler != null) {
 					Message message = new Message();
 					message.obj = null;

@@ -1,25 +1,5 @@
 package com.example.forzhihu.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.example.forzhihu.R;
-import com.example.forzhihu.async.Async_Latest;
-import com.example.forzhihu.info.NewsLatest;
-import com.example.forzhihu.info.NewsStories;
-import com.example.forzhihu.info.ThemeItem;
-import com.example.forzhihu.info.ThemesInfo;
-import com.example.forzhihu.utils.Info;
-import com.example.forzhihu.utils.Utils;
-import com.example.forzhihu.view.CustomSwipeToRefresh;
-import com.example.forzhihu.view.DragLayout;
-import com.example.forzhihu.view.MyScrollView;
-import com.example.forzhihu.view.MyScrollView.OnLoadListener;
-import com.example.forzhihu.view.SlidingSwitcherView;
-import com.nineoldandroids.view.ViewHelper;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -42,12 +22,32 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.forzhihu.R;
+import com.example.forzhihu.async.Async_Latest;
+import com.example.forzhihu.info.NewsLatest;
+import com.example.forzhihu.info.NewsStories;
+import com.example.forzhihu.info.ThemeItem;
+import com.example.forzhihu.info.ThemesInfo;
+import com.example.forzhihu.utils.Info;
+import com.example.forzhihu.utils.Utils;
+import com.example.forzhihu.view.CustomSwipeToRefresh;
+import com.example.forzhihu.view.DragLayout;
+import com.example.forzhihu.view.MyScrollView;
+import com.example.forzhihu.view.MyScrollView.OnLoadListener;
+import com.example.forzhihu.view.SlidingSwitcherView;
+import com.nineoldandroids.view.ViewHelper;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends BaseActivity implements OnClickListener {
 
 	private DragLayout dl;
 	private ListView menuLv, newsLv;
-	private String[] items = { "ÈÕ³£ĞÄÀíÑ§", "ÓÃ»§ÍÆ¼öÈÕ±¨", "µçÓ°ÈÕ±¨", "²»ĞíÎŞÁÄ", "Éè¼ÆÈÕ±¨", "´ó¹«Ë¾ÈÕ±¨", "²Æ¾­ÈÕ±¨", "»¥ÁªÍøÈÕ±¨", "¿ªÊ¼ÓÎÏ·", "ÒôÀÖÈÕ±¨",
-			"¶¯ÂşÈÕ±¨", "ÌåÓıÈÕ±¨" };
+	private String[] items = { "æ—¥å¸¸å¿ƒç†å­¦", "ç”¨æˆ·æ¨èæ—¥æŠ¥", "ç”µå½±æ—¥æŠ¥", "ä¸è®¸æ— èŠ", "è®¾è®¡æ—¥æŠ¥", "å¤§å…¬å¸æ—¥æŠ¥", "è´¢ç»æ—¥æŠ¥", "äº’è”ç½‘æ—¥æŠ¥", "å¼€å§‹æ¸¸æˆ", "éŸ³ä¹æ—¥æŠ¥",
+			"åŠ¨æ¼«æ—¥æŠ¥", "ä½“è‚²æ—¥æŠ¥" };
 	private ArrayList<String> themeNames = new ArrayList<String>();
 	private TextView tv_main, tx_banner;
 	private int listID;
@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private NewsAdapter newsAdapter;
 	private CustomSwipeToRefresh swipeRefreshLayout;
 	private MyScrollView my_scroll;
-	private boolean isAdd = true;  //ÊÇ·ñ´¥µ×Ìí¼Ó   true  Ìí¼Ó    false ²»Ìí¼Ó
+	private boolean isAdd = true;  //æ˜¯å¦è§¦åº•æ·»åŠ    true  æ·»åŠ     false ä¸æ·»åŠ 
 	private boolean isFirst = true;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +99,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(MainActivity.this, "²à»¬¿ì½İ", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MainActivity.this, "ä¾§æ»‘å¿«æ·", Toast.LENGTH_SHORT).show();
 				dl.open();
 			}
 		};
@@ -111,7 +111,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(MainActivity.this, "ÉèÖÃ°´¼ü", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MainActivity.this, "è®¾ç½®æŒ‰é”®", Toast.LENGTH_SHORT).show();
 				setNight();
 			}
 		};
@@ -139,7 +139,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 					List<NewsStories> newsStoriesList = newsLatest.getStories();
 					NewsStories topic = new NewsStories();
 					topic.setType(NewsAdapter.TYPE_TOP);
-					topic.setTitle("½ñÈÕÈÈÎÅ");
+					topic.setTitle("ä»Šæ—¥çƒ­é—»");
 					newsStoriesList.add(0, topic);
 					newsAdapter.refresh(newsStoriesList);
 					newsLv.setAdapter(newsAdapter);
@@ -153,7 +153,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 					isAdd = true;
 				}
 			} else {
-				Toast.makeText(MainActivity.this, "¼ÓÔØÊ§°Ü", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MainActivity.this, "åŠ è½½å¤±è´¥", Toast.LENGTH_SHORT).show();
 			}
 		};
 	};
@@ -172,7 +172,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			}
 		});
 		image_banner = (ImageView) findViewById(R.id.image_banner);
-		setTitlename("ÖªºõÈÕ±¨");
+		setTitlename("çŸ¥ä¹æ—¥æŠ¥");
 		tx_banner = (TextView) findViewById(R.id.tx_banner);
 		menuLv = (ListView) findViewById(R.id.lv_item);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.items_menu, R.id.tv_menu, themeNames);
@@ -188,27 +188,27 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		swipeRefreshLayout = (CustomSwipeToRefresh)findViewById(R.id.pull);
 		my_scroll = (MyScrollView) findViewById(R.id.my_scroll);
 		my_scroll.setOnLoadListener(new OnLoadListener() {
-			
+
 			@Override
 			public void onLoad() {
 				if (isAdd) {
 					isAdd = false;
 					String url = Info.httpUrl + "4/news/before/" + Info.date;
-					Utils.Log("¸üĞÂURL = " + url);
+					Utils.Log("æ›´æ–°URL = " + url);
 					new Async_Latest(url, mHandler).execute();
 				}
 			}
 		});
 		newsLv = (ListView) findViewById(R.id.news_list);
 		swipeRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
-			
+
 			@Override
 			public void onRefresh() {
 //				String url = Info.httpUrl + "4/news/latest";
 //				new Async_Latest(url, mHandler).execute();
 			}
 		});
-		
+
 		lin_login = (LinearLayout) findViewById(R.id.lin_login);
 		lin_login.setOnClickListener(this);
 
@@ -221,7 +221,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		lin_blank_1 = (LinearLayout) findViewById(R.id.lin_blank_1);
 		newsAdapter = new NewsAdapter();
 	}
-	
+
 	@SuppressLint("NewApi")
 	private void setBg(boolean flag) {
 		if (flag) {
@@ -235,7 +235,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			tx_banner.setVisibility(View.GONE);
 			sview.setVisibility(View.VISIBLE);
 			sview.startPlay(true);
-			setTitlename("ÖªºõÈÕ±¨");
+			setTitlename("çŸ¥ä¹æ—¥æŠ¥");
 			setVisble(View.VISIBLE);
 		} else {
 			if (is_night) {
@@ -244,7 +244,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 				tv_main.setBackgroundColor(this.getResources().getColor(R.color.ss));
 			}
 			image_banner.setVisibility(View.VISIBLE);
-			image_banner.setImageDrawable(new ColorDrawable(R.color.white));
+			image_banner.setImageDrawable(new ColorDrawable(this.getColor(R.color.white)));
 			tx_banner.setVisibility(View.VISIBLE);
 			tx_banner.setText(themesInfo.getOthers().get(listID).getDescription());
 			mImageLoader.displayImage(themesInfo.getOthers().get(listID).getThumbnail(), image_banner, options);
@@ -259,17 +259,17 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private void initDragLayout() {
 		dl = (DragLayout) findViewById(R.id.dl);
 		dl.setDragListener(new DragLayout.DragListener() {
-			// ½çÃæ´ò¿ªµÄÊ±ºò
+			// ç•Œé¢æ‰“å¼€çš„æ—¶å€™
 			@Override
 			public void onOpen() {
 			}
 
-			// ½çÃæ¹Ø±ÕµÄÊ±ºò
+			// ç•Œé¢å…³é—­çš„æ—¶å€™
 			@Override
 			public void onClose() {
 			}
 
-			// ½çÃæ»¬¶¯µÄÊ±ºò
+			// ç•Œé¢æ»‘åŠ¨çš„æ—¶å€™
 			@Override
 			public void onDrag(float percent) {
 				ViewHelper.setAlpha(findViewById(R.id.bt_title_menu), 1 - percent);
@@ -282,11 +282,11 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		if (v == tv_main) {
 			setBg(true);
 		} else if (v == lin_login) {
-			Toast.makeText(this, "µÇÂ¼°´Å¥", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "ç™»å½•æŒ‰é’®", Toast.LENGTH_SHORT).show();
 		} else if (v == lin_mycollection) {
-			Toast.makeText(this, "ÊÕ²Ø°´Å¥", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "æ”¶è—æŒ‰é’®", Toast.LENGTH_SHORT).show();
 		} else if (v == lin_download) {
-			Toast.makeText(this, "ÏÂÔØ°´Å¥", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "ä¸‹è½½æŒ‰é’®", Toast.LENGTH_SHORT).show();
 		}
 	}
 
@@ -364,22 +364,22 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			if (convertView == null) {
 				newsView = new NewsView();
 				switch (type) {
-				case NEWS_TITLE:
-					convertView = lInflater.inflate(R.layout.items_newstitle, null);
-					newsView.tv = (TextView) convertView.findViewById(R.id.tv_newstitle);
-					break;
+					case NEWS_TITLE:
+						convertView = lInflater.inflate(R.layout.items_newstitle, null);
+						newsView.tv = (TextView) convertView.findViewById(R.id.tv_newstitle);
+						break;
 
-				case NEWS_ITEM:
-					convertView = lInflater.inflate(R.layout.items_news, null);
-					newsView.tv = (TextView) convertView.findViewById(R.id.tv_news_items);
-					newsView.iv = (ImageView) convertView.findViewById(R.id.iv_news_items);
-					break;
+					case NEWS_ITEM:
+						convertView = lInflater.inflate(R.layout.items_news, null);
+						newsView.tv = (TextView) convertView.findViewById(R.id.tv_news_items);
+						newsView.iv = (ImageView) convertView.findViewById(R.id.iv_news_items);
+						break;
 				}
 				convertView.setTag(newsView);
 			} else {
 				newsView = (NewsView) convertView.getTag();
 			}
-			
+
 			if (newsStories.getType() == TYPE_TOP) {
 				newsView.tv.setText(newsStories.getTitle());
 			} else {

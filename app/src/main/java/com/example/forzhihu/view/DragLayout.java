@@ -1,7 +1,5 @@
 package com.example.forzhihu.view;
 
-import com.example.forzhihu.R;
-import com.nineoldandroids.view.ViewHelper;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v4.view.GestureDetectorCompat;
@@ -16,32 +14,35 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.forzhihu.R;
+import com.nineoldandroids.view.ViewHelper;
+
 /**
- * Ê¹ÓÃViewRragHelperÊµÏÖ²à»¬Ğ§¹û¹¦ÄÜ
+ * ä½¿ç”¨ViewRragHelperå®ç°ä¾§æ»‘æ•ˆæœåŠŸèƒ½
  */
 public class DragLayout extends FrameLayout {
     private boolean isShowShadow = true;
-    //ÊÖÊÆ´¦ÀíÀà
+    //æ‰‹åŠ¿å¤„ç†ç±»
     private GestureDetectorCompat gestureDetector;
-    //ÊÓÍ¼ÍÏ×§ÒÆ¶¯°ïÖúÀà
+    //è§†å›¾æ‹–æ‹½ç§»åŠ¨å¸®åŠ©ç±»
     private ViewDragHelper dragHelper;
-    //»¬¶¯¼àÌıÆ÷
+    //æ»‘åŠ¨ç›‘å¬å™¨
     private DragListener dragListener;
-    //Ë®Æ½ÍÏ×§µÄ¾àÀë
+    //æ°´å¹³æ‹–æ‹½çš„è·ç¦»
     private int range;
-    //¿í¶È
+    //å®½åº¦
     private int width;
-    //¸ß¶È
+    //é«˜åº¦
     private int height;
-    //mainÊÓÍ¼¾àÀëÔÚViewGroup¾àÀë×ó±ßµÄ¾àÀë
+    //mainè§†å›¾è·ç¦»åœ¨ViewGroupè·ç¦»å·¦è¾¹çš„è·ç¦»
     private int mainLeft;
     private Context context;
     private ImageView iv_shadow;
-    //×ó²à²¼¾Ö
+    //å·¦ä¾§å¸ƒå±€
     private LinearLayout vg_left;
-    //ÓÒ²à(Ö÷½çÃæ²¼¾Ö)
+    //å³ä¾§(ä¸»ç•Œé¢å¸ƒå±€)
     private CustomRelativeLayout vg_main;
-    //Ò³Ãæ×´Ì¬ Ä¬ÈÏÎª¹Ø±Õ
+    //é¡µé¢çŠ¶æ€ é»˜è®¤ä¸ºå…³é—­
     private Status status = Status.Close;
 
     public DragLayout(Context context) {
@@ -66,11 +67,11 @@ public class DragLayout extends FrameLayout {
         }
     }
     /**
-     * ÊµÏÖ×ÓViewµÄÍÏ×§»¬¶¯£¬ÊµÏÖCallbackµ±ÖĞÏà¹ØµÄ·½·¨
+     * å®ç°å­Viewçš„æ‹–æ‹½æ»‘åŠ¨ï¼Œå®ç°Callbackå½“ä¸­ç›¸å…³çš„æ–¹æ³•
      */
     private ViewDragHelper.Callback dragHelperCallback = new ViewDragHelper.Callback() {
         /**
-         * Ë®Æ½·½ÏòÒÆ¶¯
+         * æ°´å¹³æ–¹å‘ç§»åŠ¨
          * @param child Child view being dragged
          * @param left Attempted motion along the X axis
          * @param dx Proposed change in position for left
@@ -88,7 +89,7 @@ public class DragLayout extends FrameLayout {
         }
 
         /**
-         * À¹½ØËùÓĞµÄ×ÓView
+         * æ‹¦æˆªæ‰€æœ‰çš„å­View
          * @param child Child the user is attempting to capture
          * @param pointerId ID of the pointer attempting the capture
          * @return
@@ -98,8 +99,8 @@ public class DragLayout extends FrameLayout {
             return true;
         }
         /**
-         * ÉèÖÃË®Æ½·½Ïò»¬¶¯µÄ×îÔ¶¾àÀë
-         * @param child Child view to check  ÆÁÄ»¿í¶È
+         * è®¾ç½®æ°´å¹³æ–¹å‘æ»‘åŠ¨çš„æœ€è¿œè·ç¦»
+         * @param child Child view to check  å±å¹•å®½åº¦
          * @return
          */
         @Override
@@ -108,7 +109,7 @@ public class DragLayout extends FrameLayout {
         }
 
         /**
-         * µ±ÍÏ×§µÄ×ÓView£¬ÊÖÊÆÊÍ·ÅµÄÊ±ºò»Øµ÷µÄ·½·¨£¬ È»ºó¸ù¾İ×ó»¬»òÕßÓÒ»¬µÄ¾àÀë½øĞĞÅĞ¶Ï´ò¿ª»òÕß¹Ø±Õ
+         * å½“æ‹–æ‹½çš„å­Viewï¼Œæ‰‹åŠ¿é‡Šæ”¾çš„æ—¶å€™å›è°ƒçš„æ–¹æ³•ï¼Œ ç„¶åæ ¹æ®å·¦æ»‘æˆ–è€…å³æ»‘çš„è·ç¦»è¿›è¡Œåˆ¤æ–­æ‰“å¼€æˆ–è€…å…³é—­
          * @param releasedChild
          * @param xvel
          * @param yvel
@@ -130,7 +131,7 @@ public class DragLayout extends FrameLayout {
         }
 
         /**
-         * ×ÓView±»ÍÏ×§ ÒÆ¶¯µÄÊ±ºò»Øµ÷µÄ·½·¨
+         * å­Viewè¢«æ‹–æ‹½ ç§»åŠ¨çš„æ—¶å€™å›è°ƒçš„æ–¹æ³•
          * @param changedView View whose position changed
          * @param left New X coordinate of the left edge of the view
          * @param top New Y coordinate of the top edge of the view
@@ -139,7 +140,7 @@ public class DragLayout extends FrameLayout {
          */
         @Override
         public void onViewPositionChanged(View changedView, int left, int top,
-                int dx, int dy) {
+                                          int dx, int dy) {
             if (changedView == vg_main) {
                 mainLeft = left;
             } else {
@@ -164,14 +165,14 @@ public class DragLayout extends FrameLayout {
     };
 
     /**
-     * »¬¶¯Ïà¹Ø»Øµ÷½Ó¿Ú
+     * æ»‘åŠ¨ç›¸å…³å›è°ƒæ¥å£
      */
     public interface DragListener {
-        //½çÃæ´ò¿ª
+        //ç•Œé¢æ‰“å¼€
         public void onOpen();
-        //½çÃæ¹Ø±Õ
+        //ç•Œé¢å…³é—­
         public void onClose();
-        //½çÃæ»¬¶¯¹ı³ÌÖĞ
+        //ç•Œé¢æ»‘åŠ¨è¿‡ç¨‹ä¸­
         public void onDrag(float percent);
     }
     public void setDragListener(DragListener dragListener) {
@@ -179,8 +180,8 @@ public class DragLayout extends FrameLayout {
     }
 
     /**
-     * ²¼¾Ö¼ÓÔØÍê³É»Øµ÷
-     * ×öÒ»Ğ©³õÊ¼»¯µÄ²Ù×÷
+     * å¸ƒå±€åŠ è½½å®Œæˆå›è°ƒ
+     * åšä¸€äº›åˆå§‹åŒ–çš„æ“ä½œ
      */
     @Override
     protected void onFinishInflate() {
@@ -189,11 +190,11 @@ public class DragLayout extends FrameLayout {
             iv_shadow = new ImageView(context);
             iv_shadow.setImageResource(R.drawable.shadow);
             LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-            addView(iv_shadow, 1, lp); 
+            addView(iv_shadow, 1, lp);
         }
-        //×ó²à½çÃæ
+        //å·¦ä¾§ç•Œé¢
         vg_left = (LinearLayout) getChildAt(0);
-        //ÓÒ²à(Ö÷)½çÃæ
+        //å³ä¾§(ä¸»)ç•Œé¢
         vg_main = (CustomRelativeLayout) getChildAt(isShowShadow ? 2 : 1);
         vg_main.setDragLayout(this);
         vg_left.setClickable(true);
@@ -213,12 +214,12 @@ public class DragLayout extends FrameLayout {
         super.onSizeChanged(w, h, oldw, oldh);
         width = vg_main.getMeasuredWidth();
         height = vg_main.getMeasuredHeight();
-        //¿ÉÒÔË®Æ½ÍÏ×§»¬¶¯µÄ¾àÀë Ò»¹²ÎªÆÁÄ»¿í¶ÈµÄ80%
+        //å¯ä»¥æ°´å¹³æ‹–æ‹½æ»‘åŠ¨çš„è·ç¦» ä¸€å…±ä¸ºå±å¹•å®½åº¦çš„80%
         range = (int) (width * 0.85f);
     }
 
     /**
-     * µ÷ÓÃ½øĞĞleftºÍmain ÊÓÍ¼½øĞĞÎ»ÖÃ²¼¾Ö
+     * è°ƒç”¨è¿›è¡Œleftå’Œmain è§†å›¾è¿›è¡Œä½ç½®å¸ƒå±€
      * @param changed
      * @param left
      * @param top
@@ -232,31 +233,31 @@ public class DragLayout extends FrameLayout {
     }
 
     /**
-     * À¹½Ø´¥ÃşÊÂ¼ş
+     * æ‹¦æˆªè§¦æ‘¸äº‹ä»¶
      * @param ev
      * @return
      */
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-    	float x = ev.getX();
-    	if (x > 150) {
-			return false;
-		} else {
-			try {
-				return dragHelper.shouldInterceptTouchEvent(ev) && gestureDetector.onTouchEvent(ev);
-			} catch (Exception e) {
-			}
-			return false;
-		}
+        float x = ev.getX();
+        if (x > 150) {
+            return false;
+        } else {
+            try {
+                return dragHelper.shouldInterceptTouchEvent(ev) && gestureDetector.onTouchEvent(ev);
+            } catch (Exception e) {
+            }
+            return false;
+        }
     }
 
     /**
-     * ½«À¹½ØµÄµ½ÊÂ¼ş¸øViewDragHelper½øĞĞ´¦Àí
+     * å°†æ‹¦æˆªçš„åˆ°äº‹ä»¶ç»™ViewDragHelperè¿›è¡Œå¤„ç†
      * @param e
      * @return
      */
     @SuppressLint("ClickableViewAccessibility")
-	@Override
+    @Override
     public boolean onTouchEvent(MotionEvent e) {
         try {
             dragHelper.processTouchEvent(e);
@@ -267,7 +268,7 @@ public class DragLayout extends FrameLayout {
     }
 
     /**
-     * ½øĞĞ´¦ÀíÍÏ×§ÊÂ¼ş
+     * è¿›è¡Œå¤„ç†æ‹–æ‹½äº‹ä»¶
      * @param mainLeft
      */
     private void dispatchDragEvent(int mainLeft) {
@@ -275,9 +276,9 @@ public class DragLayout extends FrameLayout {
             return;
         }
         float percent = mainLeft / (float) range;
-        //»¬¶¯¶¯»­Ğ§¹û
+        //æ»‘åŠ¨åŠ¨ç”»æ•ˆæœ
         animateView(percent);
-        //½øĞĞ»Øµ÷»¬¶¯µÄ°Ù·Ö±È
+        //è¿›è¡Œå›è°ƒæ»‘åŠ¨çš„ç™¾åˆ†æ¯”
         dragListener.onDrag(percent);
         Status lastStatus = status;
         if (lastStatus != getStatus() && status == Status.Close) {
@@ -288,7 +289,7 @@ public class DragLayout extends FrameLayout {
     }
 
     /**
-     * ¸ù¾İ»¬¶¯µÄ¾àÀëµÄ±ÈÀı,½øĞĞÆ½ÒÆ¶¯»­
+     * æ ¹æ®æ»‘åŠ¨çš„è·ç¦»çš„æ¯”ä¾‹,è¿›è¡Œå¹³ç§»åŠ¨ç”»
      * @param percent
      */
     private void animateView(float percent) {
@@ -296,13 +297,13 @@ public class DragLayout extends FrameLayout {
 
         ViewHelper.setTranslationX(vg_left, -vg_left.getWidth() / 2.5f + vg_left.getWidth() / 2.5f * percent);
         if (isShowShadow) {
-            //ÒõÓ°Ğ§¹ûÊÓÍ¼´óĞ¡½øĞĞËõ·Å
+            //é˜´å½±æ•ˆæœè§†å›¾å¤§å°è¿›è¡Œç¼©æ”¾
             ViewHelper.setScaleX(iv_shadow, f1 * 1.2f * (1 - percent * 0.10f));
             ViewHelper.setScaleY(iv_shadow, f1 * 1.85f * (1 - percent * 0.10f));
         }
     }
     /**
-     * ÓĞ¼ÓËÙ¶È,µ±ÎÒÃÇÍ£Ö¹»¬¶¯µÄÊ±ºò£¬¸Ã²»»áÁ¢¼´Í£Ö¹¶¯»­Ğ§¹û
+     * æœ‰åŠ é€Ÿåº¦,å½“æˆ‘ä»¬åœæ­¢æ»‘åŠ¨çš„æ—¶å€™ï¼Œè¯¥ä¸ä¼šç«‹å³åœæ­¢åŠ¨ç”»æ•ˆæœ
      */
     @Override
     public void computeScroll() {
@@ -312,14 +313,14 @@ public class DragLayout extends FrameLayout {
     }
 
     /**
-     * Ò³Ãæ×´Ì¬(»¬¶¯,´ò¿ª,¹Ø±Õ)
+     * é¡µé¢çŠ¶æ€(æ»‘åŠ¨,æ‰“å¼€,å…³é—­)
      */
     public enum Status {
         Drag, Open, Close
     }
 
     /**
-     * Ò³Ãæ×´Ì¬ÉèÖÃ
+     * é¡µé¢çŠ¶æ€è®¾ç½®
      * @return
      */
     public Status getStatus() {
@@ -339,7 +340,7 @@ public class DragLayout extends FrameLayout {
 
     public void open(boolean animate) {
         if (animate) {
-            //¼ÌĞø»¬¶¯
+            //ç»§ç»­æ»‘åŠ¨
             if (dragHelper.smoothSlideViewTo(vg_main, range, 0)) {
                 ViewCompat.postInvalidateOnAnimation(this);
             }
@@ -355,7 +356,7 @@ public class DragLayout extends FrameLayout {
 
     public void close(boolean animate) {
         if (animate) {
-            //¼ÌĞø»¬¶¯
+            //ç»§ç»­æ»‘åŠ¨
             if (dragHelper.smoothSlideViewTo(vg_main, 0, 0)) {
                 ViewCompat.postInvalidateOnAnimation(this);
             }
